@@ -81,105 +81,119 @@
   <main class="container">
     <h1>Privacy Policy for Rentala</h1>
     <p class="meta">
-      <strong>Effective Date:</strong> October 24, 2026 &nbsp;|&nbsp;
-      <strong>Last Updated:</strong> October 24, 2026
+      <strong>Effective Date:</strong> October 26, 2026 &nbsp;|&nbsp;
+      <strong>Last Updated:</strong> October 26, 2026
     </p>
 
     <p>
-      This Privacy Policy explains how <strong>Christian Tucay</strong> ("we," "us," or "our") handles information when you use the <strong>Rentala</strong> mobile application ("the App"). Rentala is an offline-first rental property management application designed for independent landlords and rental property managers.
+      This Privacy Policy explains how <strong>Christian Tucay</strong> ("we," "us," or "our") handles information in the <strong>Rentala</strong> mobile application ("the App"). Rentala is an offline-first rental-management app for independent landlords. It does not require a Rentala account. This policy distinguishes information stored on your device from information you choose to export, share, back up, or submit to Google Play.
     </p>
 
-    <h2>1. Offline-First Architecture &amp; On-Device Data Storage</h2>
-    <p>
-      Rentala is built as an <strong>offline-first</strong> application. All operational landlord, property, and tenant records you enter or generate within the App are stored locally on your device inside app-private storage, rather than on developer-operated cloud databases.
-    </p>
-
-    <h3>Information Stored Locally on Your Device</h3>
-    <ul>
-      <li><strong>Property &amp; Unit Records:</strong> Property areas, property names, physical addresses, unit identifiers, occupancy details, and unit status.</li>
-      <li><strong>Tenant &amp; Occupant Information:</strong> Tenant names, contact details (phone numbers, email addresses), dates of birth, nationality, applicant/active/former status, co-occupant names, and occupant relationships.</li>
-      <li><strong>Lease &amp; Document Records:</strong> Lease records, rental amounts, due dates, security deposits, lease terms, agreement drafts, generated lease agreement PDFs, digital signatures, and related attachments.</li>
-      <li><strong>Financial &amp; Accounting Ledgers:</strong> Payment dues, partial and full payment records, running balances, generated receipts, income and expense logs, financial adjustments, accounting ledger entries, statements, and financial dashboard summaries.</li>
-      <li><strong>Reminders &amp; Templates:</strong> Local notification schedules, reminder preferences, and custom message templates.</li>
-      <li><strong>Local Security &amp; Preferences:</strong> Local application PIN data and app configuration settings.</li>
-    </ul>
-
-    <h3>How On-Device Data Is Protected</h3>
-    <ul>
-      <li><strong>SQLCipher Encrypted Database:</strong> Local relational records are stored in an encrypted Room/SQLite database secured with SQLCipher.</li>
-      <li><strong>Encrypted Document Storage:</strong> Locally generated documents, signatures, and receipts are stored inside encrypted local storage and Android app-private directories.</li>
-      <li><strong>Preferences DataStore:</strong> Application settings and preferences are stored within Android Preferences DataStore.</li>
-    </ul>
-    <p>
-      We do <strong>not</strong> perform automatic background cloud synchronization of your database, and we do <strong>not</strong> have access to your local database records, tenant files, or financial ledgers.
-    </p>
-
-    <h2>2. User Authentication &amp; Security Modes</h2>
-    <ul>
-      <li><strong>Local Device Authentication (PIN &amp; Biometrics):</strong> You may lock the App using a local PIN and optional biometric unlock mediated through the <strong>AndroidX Biometric API</strong>. Biometric verification is handled strictly by your device's operating system and hardware keystore; Rentala never accesses, stores, or transmits raw biometric data.</li>
-      <li><strong>Firebase Authentication (Optional Email &amp; Password):</strong> When Firebase Authentication is enabled and used, your email address, password credentials, and Firebase User ID are processed by <strong>Google Firebase Authentication</strong> to verify your identity and manage account access.</li>
-      <li><strong>Google Account Authorization (Optional Google Drive Backup):</strong> If you connect your Google Account for backups, authorization is handled via <strong>Google Identity / Credentials</strong> and <strong>Google Play Services Auth</strong> strictly to enable user-initiated backup operations to your personal Google Drive.</li>
-    </ul>
-
-    <h2>3. Optional Backups &amp; User-Initiated Google Drive Integration</h2>
-    <p>
-      Rentala does not automatically synchronize your operational database to the cloud. You may explicitly choose to:
-    </p>
-    <ul>
-      <li>Export or import encrypted or plaintext backup files through the <strong>Android Storage Access Framework (system file picker)</strong>.</li>
-      <li>Upload, list, download, and restore an encrypted or plaintext backup file in your personal <strong>Google Drive</strong> account.</li>
-    </ul>
     <div class="callout">
-      <strong>Limited Google Drive Scope (<code>drive.file</code>):</strong> Rentala requests only the scoped <code>https://www.googleapis.com/auth/drive.file</code> permission via the Google Drive REST API (using OkHttp). This allows Rentala to access <strong>only</strong> the visible <code>Rentala Backups</code> folder and backup files created by the App. Rentala cannot view, access, or modify any other files or folders in your Google Drive. Rentala's use and transfer of information received from Google APIs adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.
+      <strong>In brief:</strong> Rental records are stored on the device where you use Rentala. Rentala does not automatically sync them to a developer-operated server. Optional Google Drive backup and file export are user-initiated and can transfer a copy of the backup outside the device. Google Play separately processes any in-app purchase when that feature is available.
     </div>
 
-    <h2>4. Third-Party Services &amp; SDKs</h2>
+    <h2>1. Information You Store in Rentala</h2>
     <p>
-      Rentala does <strong>not</strong> include advertising SDKs (such as Google AdMob) and does <strong>not</strong> include third-party analytics or crash-reporting SDKs (such as Firebase Analytics or Firebase Crashlytics). The App integrates the following services strictly for functionality and security:
+      Rentala works offline and stores the operational records you enter or create in the App in app-private storage on your device. The information depends on the features you use and may include:
     </p>
     <ul>
-      <li><strong>Google Firebase Authentication:</strong> Processes email/password authentication credentials when configured.</li>
-      <li><strong>Google Firebase App Check:</strong> Verifies that requests originate from an authentic instance of the App and an untampered device.</li>
-      <li><strong>Google Firebase AI:</strong> Processes prompts or inputs submitted to AI-assisted features to generate requested outputs.</li>
-      <li><strong>Google Play Services Auth &amp; Google Drive API:</strong> Facilitates optional Google account authorization and user-initiated backup transfers to your Google Drive.</li>
+      <li><strong>Landlord, property, and unit details:</strong> names, addresses, property areas, unit identifiers, occupancy, and status.</li>
+      <li><strong>Tenant and occupant details:</strong> names, contact information, dates of birth, nationality, status, relationships, and other details entered by the landlord.</li>
+      <li><strong>Identity and agreement details:</strong> civil status, addresses, government ID types and numbers, issue details, lease terms, agreement drafts, and user-drawn signature images where supplied.</li>
+      <li><strong>Rental and accounting records:</strong> rent amounts, dues, full or partial payment records, balances, receipts, income, expenses, adjustments, and reports.</li>
+      <li><strong>Reminder and message information:</strong> due dates, notification preferences, and message templates.</li>
+      <li><strong>App settings and security data:</strong> theme, language, preferences, and a salted PIN verifier for the optional app lock.</li>
     </ul>
-    <p>
-      You can review Google's data practices in the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy and Security in Firebase</a>.
-    </p>
 
-    <h2>5. Android Permissions &amp; System-Mediated Features</h2>
+    <h3>On-device protection</h3>
     <ul>
-      <li><code>INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>: Used for network status checks, Firebase Authentication/App Check/AI requests, and optional user-initiated Google Drive backup operations.</li>
-      <li><code>POST_NOTIFICATIONS</code>: Used to display local scheduled notifications for rent due dates, lease expirations, and reminders.</li>
+      <li>The Room database is encrypted with SQLCipher. Its database key is protected using the Android Keystore.</li>
+      <li>Managed local documents, including applicable signatures and receipts, are encrypted with AES-GCM in app-private storage.</li>
+      <li>The optional app-lock PIN is stored as a salted, iterated verifier rather than as the PIN itself. Biometric matching is performed by Android; Rentala does not access or store raw biometric data.</li>
+      <li>Some non-secret app preferences are stored locally using Android Preferences DataStore. Encryption at rest does not protect data from someone who can use an already-unlocked or compromised device.</li>
     </ul>
     <p>
-      <strong>No Camera or Broad Storage Permissions:</strong> Rentala does not declare camera or broad media/filesystem storage permissions. Exporting files, printing PDFs, and sharing receipts or reminders are performed exclusively through user-initiated Android system intents (Storage Access Framework file picker, Android Print Framework/WebView, FileProvider, and the Android Share Sheet).
+      Android automatic backup for Rentala app data is disabled. A database export, PDF, shared file, or Google Drive backup that you create is a separate copy and follows the destination and protection you choose.
     </p>
 
-    <h2>6. Data Security</h2>
+    <h2>2. Accounts, App Lock, and Notifications</h2>
+    <p>
+      Rentala currently uses a local device profile; email/password registration and Firebase sign-in are not part of the current app flow. A Google account is needed only if you choose to connect Google Drive. Google handles that authorization, and Rentala uses the authorized account identity to show the connected account and perform the requested backup actions. The account email is stored locally in the app's Keystore-backed encrypted vault.
+    </p>
+    <p>
+      If you enable reminders and grant notification permission, Rentala schedules local notifications on your device for dates you configure. Depending on the reminder and your device's notification settings, a notification may show a tenant name, property, due date, or amount on the lock screen. You can change notification permissions and lock-screen visibility in Android settings or adjust reminders in the App.
+    </p>
+
+    <h2>3. Optional Export, Sharing, and Google Drive Backup</h2>
+    <p>
+      Rentala does not automatically upload or synchronize your rental records. You choose when to export or transfer a backup:
+    </p>
     <ul>
-      <li><strong>Encryption at Rest:</strong> Local databases are encrypted with SQLCipher, and local documents and receipts are stored in encrypted app-private storage.</li>
-      <li><strong>Encryption in Transit:</strong> All external communications with Firebase and Google Drive APIs are encrypted in transit via HTTPS/TLS.</li>
+      <li>You can export or import a backup through the Android system file picker. Depending on the export option, a backup may be password-encrypted or readable without a password. Keep the password separate from the backup; Rentala cannot recover a forgotten password.</li>
+      <li>If you connect Drive, you can manually upload, list, download, and restore backup files in the visible <strong>My Drive → Rentala Backups</strong> folder. Backup contents are transferred to and stored by Google under your Google account. The file remains encrypted only if you exported or selected an encrypted backup.</li>
+      <li>You may print or share documents and receipts using Android's print, file, or share interface. The system destination or app you select receives the content you choose to send and handles it under its own terms and privacy practices.</li>
     </ul>
+    <div class="callout">
+      <strong>Google Drive access:</strong> Rentala requests the narrow <code>https://www.googleapis.com/auth/drive.file</code> scope for its user-initiated backup workflow; it does not request broad access to all Drive files. Drive access is limited by the scope and Google's authorization rules to files the App creates or that are otherwise made available to it. You can revoke Rentala's access from your <a href="https://myaccount.google.com/connections" target="_blank" rel="noopener">Google Account connections</a>. Google API data use is subject to Google's <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">API Services User Data Policy</a>, including its Limited Use requirements.
+    </div>
 
-    <h2 id="account-deletion">7. Data Retention &amp; Account / Data Deletion</h2>
+    <h2>4. Third-Party Processing and Purchases</h2>
+    <p>
+      The current app does not use advertising, Firebase Analytics, or Firebase Crashlytics. It does not send locally stored tenant, property, lease, or accounting records to Firebase for sign-in, AI, analytics, or crash reporting. Google services are used for the following user-requested or platform functions:
+    </p>
     <ul>
-      <li><strong>Local App Data:</strong> You can delete records directly inside the App at any time, or erase all local data permanently by clearing the App's storage in your Android system settings or uninstalling the App.</li>
-      <li><strong>Google Drive Backups:</strong> You can delete backup files directly from the <code>Rentala Backups</code> folder in your Google Drive, and revoke Rentala's access at any time from your <a href="https://myaccount.google.com/connections" target="_blank" rel="noopener">Google Account Connections page</a>.</li>
-      <li><strong>Firebase Authentication Account Deletion:</strong> If you use Firebase Authentication, you may delete your account within the App (where enabled) or request permanent deletion of your Firebase Authentication account record by emailing <a href="mailto:ctucay.terre@gmail.com?subject=Rentala%20Account%20Deletion%20Request"><strong>ctucay.terre@gmail.com</strong></a> with the subject line <strong>"Rentala Account Deletion Request"</strong>. Requests are processed within 30 days.</li>
+      <li><strong>Google Drive and Google Identity:</strong> Used only when you connect Drive and initiate backup actions. Google receives the authorization request and the backup file and related file metadata needed to store and retrieve it.</li>
+      <li><strong>Google Play Billing:</strong> If a Premium one-time purchase is available in your version of the App, Google Play handles checkout and payment details. Rentala receives the signed purchase result needed to verify and restore the entitlement, and stores purchase evidence locally in the Keystore-backed vault. Rentala does not receive your payment card or bank credentials, and does not operate a purchase-verification server.</li>
+      <li><strong>Android system services:</strong> The system file picker, print service, notification service, and apps you explicitly choose to share with may process the files or notification content needed for the action you request.</li>
+    </ul>
+    <p>
+      Google Play and Google Drive data are also subject to Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and applicable service terms. We do not operate a cloud account system or automatic synchronization service for Rentala records.
+    </p>
+
+    <h2>5. Network Access and Android Permissions</h2>
+    <ul>
+      <li><code>INTERNET</code> and <code>ACCESS_NETWORK_STATE</code>: Support optional Google Drive backup and Google Play Billing/network availability checks.</li>
+      <li><code>POST_NOTIFICATIONS</code>: Lets the App show local reminders when you allow notifications.</li>
+      <li><code>RECEIVE_BOOT_COMPLETED</code>: Lets the App reschedule configured local reminders after the device restarts.</li>
+      <li><code>VIBRATE</code>: Supports notification or interaction feedback.</li>
+    </ul>
+    <p>
+      Rentala does not request camera or broad media/filesystem storage permissions. File export/import, PDF printing, and sharing are initiated through Android's system picker, print framework, or share interface.
+    </p>
+
+    <h2>6. Data Retention and Your Choices</h2>
+    <ul>
+      <li><strong>On-device records:</strong> Records remain in Rentala until you edit or delete them, clear the App's storage, or uninstall the App. Clearing storage or uninstalling removes the app-private copy, but does not delete files you exported, shared with another app, or uploaded to Drive.</li>
+      <li><strong>Drive backups:</strong> Backups remain in your Google Drive until you delete them from the <code>Rentala Backups</code> folder. Revoking authorization stops future access but does not delete existing backup files.</li>
+      <li><strong>Exported and shared files:</strong> Copies saved through the file picker, print destination, or another app are controlled by that destination. Delete them there when no longer needed.</li>
+      <li><strong>Purchase records:</strong> Google Play retains transaction records under its own policies. The App keeps local signed purchase evidence as needed to restore your entitlement.</li>
     </ul>
 
-    <h2>8. Target Audience &amp; Children's Privacy</h2>
+    <h2>7. Privacy Rights and Requests</h2>
     <p>
-      Rentala is intended for adult users (18+) who manage rental properties. The App does not target or knowingly collect information from children under 13.
+      You can review, correct, and delete records on the device where they are stored using the App's available controls. The Rentala developer does not have routine access to those local records. If you are a tenant or occupant whose information was entered by a landlord, contact that landlord or property manager to ask about access, correction, or deletion of the local record. The landlord/operator is responsible for deciding how those records are used and for providing any notices required by applicable law. You may also contact us about information that you directly sent to the developer or about this policy at the address below. Requests are handled according to applicable law; we cannot retrieve or erase data from a device or Google Drive account we do not control.
+    </p>
+    <p>
+      Depending on applicable law, individuals may have rights to be informed about, access, correct, object to, or request blocking/deletion of personal information, and may raise a concern with the relevant privacy regulator. For information about rights under the Philippines Data Privacy Act, see the <a href="https://privacy.gov.ph/data-subject-rights/" target="_blank" rel="noopener">National Privacy Commission's data subject rights guidance</a>.
     </p>
 
-    <h2>9. Changes to This Privacy Policy</h2>
+    <h2>8. Children's and Occupant Information</h2>
     <p>
-      We may update this Privacy Policy periodically. Any changes will be posted on this page with an updated revision date.
+      Rentala is designed for adult landlords and property managers; it is not directed to children. A landlord may enter information about occupants who are minors, including a name or relationship. The landlord/operator must ensure that collecting and using that information is lawful and provide any required notices or obtain any required permissions. Rentala does not independently verify a person's age or the landlord's authority to enter the information.
     </p>
 
-    <h2>10. Contact Us</h2>
+    <h2>9. Security Limitations</h2>
+    <p>
+      We use Android app-private storage, SQLCipher for the database, Android Keystore-backed key protection, and encryption for managed documents. Network transfers to Google services use HTTPS. These safeguards reduce risk but cannot guarantee that data will be secure in every circumstance. Anyone who can use an unlocked device, access an exported unencrypted backup, or access your Google account may be able to see the information available to them. Use a strong device lock, protect backup passwords, and avoid sharing unredacted tenant records when requesting support.
+    </p>
+
+    <h2>10. Changes to This Privacy Policy</h2>
+    <p>
+      We may update this Policy when Rentala's features or data practices change. The updated policy will be posted on this page with a revised effective date. Review it periodically, especially after an app update.
+    </p>
+
+    <h2>11. Contact Us</h2>
     <p>
       If you have questions or requests regarding this Privacy Policy, please contact:<br />
       <strong>Developer / Organization:</strong> Christian Tucay<br />
