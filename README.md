@@ -1,21 +1,21 @@
 # Rentala Privacy Policy
 
-This repository contains the public-facing privacy policy for the Rentala Android application, an offline-first rental-management app for independent landlords.
+This repository contains the canonical public-facing privacy policy for the Rentala Android application and informational website. Rentala is an offline-first rental-management app for independent landlords.
 
 ## Policy
 
 - Source: [`index.html`](index.html)
 - Repository page: <https://github.com/fak3rfac3/rentala-privacy/blob/main/index.html>
-- Intended GitHub Pages URL: <https://fak3rfac3.github.io/rentala-privacy/>
+- Live GitHub Pages URL: <https://fak3rfac3.github.io/rentala-privacy/>
 
-The GitHub Pages URL is not active yet. Enable Pages in **Settings → Pages**, select **GitHub Actions** as the build and deployment source, then publish this repository. Verify the resulting URL in a signed-out browser before using it in Google Play Console.
+The policy is automatically validated and deployed to GitHub Pages via GitHub Actions on pushes to `main`.
 
 ## Updating the policy
 
 1. Edit `index.html` and update its effective/last-updated dates when the policy changes.
-2. Open a pull request against `main` and review the rendered diff.
-3. Ensure the **Validate privacy policy** workflow passes before merging.
-4. After Pages is enabled and deployment completes, check the live page on mobile and desktop.
+2. Mirror any applicable updates into `src/components/PrivacyPolicy.tsx` in [`fak3rfac3/rentala-web`](https://github.com/fak3rfac3/rentala-web).
+3. Ensure `python scripts/validate_policy.py` and the **Validate privacy policy** workflow pass.
+4. After deployment completes, verify <https://fak3rfac3.github.io/rentala-privacy/> on mobile and desktop.
 5. Update the privacy-policy URL in Google Play Console if the published URL changes.
 
 Keep the policy consistent with the app's actual release behavior. In particular, review local data handling, optional Google Drive backup, billing, permissions, and retention whenever those features change. Never commit OAuth tokens, signing keys, service-account credentials, or user backup files to this repository.
@@ -30,4 +30,6 @@ python scripts/validate_policy.py
 
 ## Contact
 
-For policy questions, contact [Christian Tucay](mailto:ctucay.terre@gmail.com).
+- **Developer / Privacy Inquiries:** [Christian Tucay](mailto:ctucay.terre@gmail.com)
+- **General Support:** [rentala-support@googlegroups.com](mailto:rentala-support@googlegroups.com)
+- **Official Facebook Page:** <https://www.facebook.com/RentalaApp>
