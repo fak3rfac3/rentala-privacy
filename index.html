@@ -81,17 +81,19 @@
   <main class="container">
     <h1>Privacy Policy for Rentala</h1>
     <p class="meta">
-      <strong>Effective Date:</strong> October 26, 2026 &nbsp;|&nbsp;
-      <strong>Last Updated:</strong> October 27, 2026
+      <strong>Effective Date:</strong> Planned release: December 1–7, 2026 (exact date to be confirmed before publication) &nbsp;|&nbsp;
+      <strong>Last Updated:</strong> November 27, 2026
     </p>
 
     <p>
-      This Privacy Policy explains how <strong>Christian Tucay</strong> ("we," "us," or "our") handles information in the <strong>Rentala</strong> mobile application ("the App") and on the Rentala informational website. Rentala is an offline-first rental-management app for independent landlords. It does not require a Rentala account. This policy distinguishes information stored on your device from information you choose to export, share, back up, or submit to Google Play.
+      This Privacy Policy explains how <strong>Christian Tucay</strong> ("we," "us," or "our") handles information in the <strong>Rentala</strong> mobile application ("the App") and on the Rentala informational website. Rentala is an offline-first rental-management app for independent landlords. It does not require a Rentala account. This policy explains on-device storage, automatic trial-record storage, and information you choose to export, share, back up, or submit to Google Play.
     </p>
 
     <div class="callout">
-      <strong>In brief:</strong> Rental records are stored on the device where you use Rentala. Rentala does not automatically sync them to a developer-operated server. Optional Google Drive backup and file export are user-initiated and can transfer a copy of the backup outside the device. Google Play separately processes any in-app purchase when that feature is available.
+      <strong>In brief:</strong> Rental records are stored on the device where you use Rentala. Rentala does not automatically sync them to a developer-operated server. Optional Google Drive backup and file export are user-initiated and can transfer a copy of the backup outside the device. A small trial record may be backed up automatically through Android and Google Play services under your device settings. Google Play separately processes Full Access purchases.
     </div>
+
+    <p><strong>What changed in this version — November 27, 2026:</strong> Added the 7-day trial, updated free plan limits and Full Access purchase details, and explained trial-record storage, automatic backup, purchase restoration, and data retention.</p>
 
     <h2>1. Information You Store in Rentala</h2>
     <p>
@@ -103,23 +105,23 @@
       <li><strong>Identity and agreement details:</strong> civil status, addresses, government ID types and numbers, issue details, lease terms, agreement drafts, inspection checklists, and user-drawn signature images where supplied.</li>
       <li><strong>Rental and accounting records:</strong> rent amounts, dues, full or partial payment records, balances, receipts, income, expenses, adjustments, and reports.</li>
       <li><strong>Reminder and message information:</strong> due dates, notification preferences, and message templates.</li>
-      <li><strong>App settings and security data:</strong> theme, language, preferences, and a salted, iterated PIN verifier for the app lock.</li>
+      <li><strong>App settings and security data:</strong> theme, language, preferences, and a salted, iterated PIN or password verifier if you enable App Lock.</li>
     </ul>
 
     <h3>On-device protection</h3>
     <ul>
       <li>The Room database is encrypted with SQLCipher. Its database key is protected using the Android Keystore.</li>
       <li>Managed local documents, including applicable signatures and receipts, are encrypted with AES-GCM in app-private storage.</li>
-      <li>Rentala requires setting a six-digit PIN on initial setup, which is stored as a salted, iterated PBKDF2 verifier rather than as the PIN itself. After setup, you can configure auto-lock timing, enable optional biometric unlock, or toggle the app-lock prompt in Security Settings. Biometric matching is performed by Android; Rentala does not access or store raw biometric data.</li>
+      <li>Fresh installs leave App Lock off until you enable it in Security Settings. You can use a six-digit PIN or a password, stored as a salted, iterated PBKDF2 verifier rather than as the credential itself, and configure auto-lock and biometric unlock. Phone lock recovery is on by default and can be turned off in Security Settings. Biometric matching and phone lock authentication are performed by Android; Rentala does not access or store raw biometric data.</li>
       <li>Some non-secret app preferences are stored locally using Android Preferences DataStore. Encryption at rest does not protect data from someone who can use an already-unlocked or compromised device.</li>
     </ul>
     <p>
-      Android automatic backup for Rentala app data is disabled. A database export, PDF, shared file, or Google Drive backup that you create is a separate copy and follows the destination and protection you choose.
+      Android Auto Backup is enabled with an allowlist containing only the small signed trial file, <code>rentala_trial_record.dat</code>. The same allowlist applies to Android device-to-device transfer. The encrypted rental database, managed documents, settings, local trial preferences, and purchase evidence are excluded. Automatic backup depends on your Android backup settings and service availability; it is not a backup of your rental records. A database export, PDF, shared file, or Google Drive backup that you create is a separate copy and follows the destination and protection you choose.
     </p>
 
     <h2>2. Accounts, App Lock, and Notifications</h2>
     <p>
-      Rentala currently uses a local device profile; email/password registration and Firebase sign-in are not part of the current app flow. A Google account is needed only if you choose to connect Google Drive. Google handles that authorization, and Rentala uses the authorized account identity to show the connected account and perform the requested backup actions. The account email is stored locally in the app's Keystore-backed encrypted vault.
+      Rentala currently uses a local device profile; email/password registration and Firebase sign-in are not part of the current app flow. Core rental workflows do not require a Google account. Google accounts and services are used for optional Drive backup, Google Play purchases and purchase restoration, and supported automatic trial-record backup and restoration. For Drive, Google handles authorization, and Rentala uses the authorized account identity to show the connected account and perform backup actions. The account email and recent transfer metadata (account, filename, and time) are stored locally in the app's Keystore-backed encrypted vault. Google manages authorization grants; Rentala holds the active Drive access token in memory.
     </p>
     <p>
       If you enable reminders and grant notification permission, Rentala schedules local notifications on your device for dates you configure. Depending on the reminder and your device's notification settings, a notification may show a tenant name, property, due date, or amount on the lock screen. You can change notification permissions and lock-screen visibility in Android settings or adjust reminders in the App.
@@ -130,7 +132,7 @@
       Rentala does not automatically upload or synchronize your rental records. You choose when to export or transfer a backup:
     </p>
     <ul>
-      <li>You can export or import a backup through the Android system file picker. Depending on the export option, a backup may be password-encrypted or readable without a password (after an explicit warning). Keep the password separate from the backup; Rentala cannot recover a forgotten password.</li>
+      <li>You can export or import a backup through the Android system file picker. Depending on the export option, a backup may be password-encrypted or readable without a password (after an explicit warning). Keep the password separate from the backup; Rentala cannot recover a forgotten password or open a password-encrypted backup with the wrong password.</li>
       <li>If you connect Drive, you can manually upload, list, download, and restore backup files in the visible <strong>My Drive → Rentala Backups</strong> folder. Backup contents are transferred to and stored by Google under your Google account. The file remains encrypted only if you exported or selected an encrypted backup.</li>
       <li>You may print or share documents and receipts using Android's print, file, or share interface. The system destination or app you select receives the content you choose to send and handles it under its own terms and privacy practices.</li>
     </ul>
@@ -138,25 +140,43 @@
       <strong>Google Drive access:</strong> Rentala requests the narrow <code>https://www.googleapis.com/auth/drive.file</code> scope for its user-initiated backup workflow; it does not request broad access to all Drive files. Drive access is limited by the scope and Google's authorization rules to files the App creates or that are otherwise made available to it. You can revoke Rentala's access from your <a href="https://myaccount.google.com/connections" target="_blank" rel="noopener noreferrer">Google Account connections</a>. Google API data use is subject to Google's <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">API Services User Data Policy</a>, including its Limited Use requirements.
     </div>
 
+    <p>
+      Restoring a valid backup is not limited by the free plan, even if the backup contains more areas, properties, or units than the free limits. Restore replaces the current portfolio after validation and creates a password-encrypted pre-restore safety backup on the device. The imported trial stamp is combined with available trial records; restoring a backup does not guarantee a new trial. Purchases are not transferred in backup files.
+    </p>
+
     <h2>4. Third-Party Processing and Purchases</h2>
     <p>
-      The current app does not use advertising, Firebase Analytics, or Firebase Crashlytics. It does not send locally stored tenant, property, lease, or accounting records to Firebase for sign-in, AI, analytics, or crash reporting. Google services are used for the following user-requested or platform functions:
+      Rentala offers a 7-day Full Access trial with no area, property, or unit limits. For new users, it starts when you save your first real record; viewing the Sample Preview does not start it. Existing free users with real records and no recovered trial record start their trial when the App is first opened after updating. After the trial, the free plan allows 2 areas, 2 active properties per area (plus 2 in the unassigned "No area" group), and 2 active units per property. Existing data stays visible, editable, and usable, including records above these limits. Only adding areas, properties, or units past a limit is blocked; moving a property into an area already at its limit is also blocked. Limits do not delete your data or block backup restoration.
+    </p>
+    <p>
+      To preserve trial status across reinstalls, device changes, and backup restores, Rentala keeps a small trial record containing the trial start time, last-used time, and format version. It contains no names, tenant details, property details, or other rental data. Copies are kept in local app preferences and the signed trial file on the device, and through Google Block Store when available. When a trial record exists, exported backups include a signed trial stamp containing the trial start time, export time, format version, and signature. Nothing in the trial record or stamp is sent to Rentala servers; Rentala does not operate a trial-record server.
+    </p>
+    <p>
+      The current app has no advertising, analytics, or crash-reporting SDKs, including Firebase Analytics and Firebase Crashlytics. It does not send locally stored tenant, property, lease, or accounting records to Firebase for sign-in, AI, analytics, or crash reporting. Google services are used for the following user-requested or platform functions:
     </p>
     <ul>
-      <li><strong>Google Drive and Google Identity:</strong> Used only when you connect Drive and initiate backup actions. Google receives the authorization request and the backup file and related file metadata needed to store and retrieve it.</li>
-      <li><strong>Google Play Billing:</strong> If a Premium one-time purchase (which removes the free creation limits of 2 locations, 1 active property per location, and 3 active units per property) is available in your version of the App, Google Play handles checkout and payment details. Rentala receives the signed purchase result needed to verify and restore the entitlement, and stores purchase evidence locally in the Keystore-backed vault. Rentala does not receive your payment card or bank credentials, and does not operate a purchase-verification server.</li>
+      <li><strong>Google Drive and Google Identity:</strong> Used when you connect Drive and for subsequent connection checks and manual backup actions. Google receives authorization and file requests, backup files you upload, and related file metadata. Rentala may reconnect to a previously authorized account when you return to Backup settings; it does not automatically upload your rental records. Disconnecting or revoking access does not delete files already in Drive.</li>
+      <li><strong>Google Play Billing:</strong> Full Access is an optional one-time purchase through Google Play that removes area, property, and unit limits. The price is shown by Google Play before purchase. Google handles checkout and payment details. Rentala receives signed purchase evidence, including a purchase token and product and transaction details, verifies it locally, and stores it in the Keystore-backed encrypted vault so access can remain available offline. Purchase evidence is never included in exported backup files or Android Auto Backup. To restore a purchase after reinstalling or changing devices, use Restore purchase with the same Google Play account that bought Full Access. Rentala does not receive your payment card or bank credentials and does not operate a purchase-verification server.</li>
+      <li><strong>Android Auto Backup and Google Block Store:</strong> Google may store the small trial record under your Google account and restore it later under your backup settings and Google's policies. Block Store uses Google Play services; Rentala requests cloud backup only when that service reports end-to-end encryption is available. Storage or restoration may be unavailable on some devices. These trial-record services do not receive your rental database or documents from Rentala.</li>
       <li><strong>Android system services:</strong> The system file picker, print service, notification service, and apps you explicitly choose to share with may process the files or notification content needed for the action you request.</li>
     </ul>
     <p>
-      Google Play and Google Drive data are also subject to Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and applicable service terms. We do not operate a cloud account system or automatic synchronization service for Rentala records.
+      Google Play, Google Drive, Android Auto Backup, and Google Block Store data are also subject to Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and applicable service terms. We do not operate a cloud account system or automatic synchronization service for Rentala records.
+    </p>
+
+    <p>
+      If Google Play reports a Full Access purchase as refunded or revoked, Rentala removes paid access after a successful ownership check. After the original trial has ended, this returns you to the free plan; any time left in the original trial can still be used. Offline or failed checks retain previously verified purchase evidence until a successful check. No rental data is deleted when paid access ends or free limits apply.
     </p>
 
     <h2>5. Network Access and Android Permissions</h2>
     <ul>
-      <li><code>INTERNET</code> and <code>ACCESS_NETWORK_STATE</code>: Support optional Google Drive backup and Google Play Billing/network availability checks.</li>
+      <li><code>INTERNET</code> and <code>ACCESS_NETWORK_STATE</code>: Support optional Google Drive backup, Google Play Billing, Google Play services trial-record storage, and network availability checks.</li>
       <li><code>POST_NOTIFICATIONS</code>: Lets the App show local reminders when you allow notifications.</li>
       <li><code>RECEIVE_BOOT_COMPLETED</code>: Lets the App reschedule configured local reminders after the device restarts.</li>
       <li><code>VIBRATE</code>: Supports notification or interaction feedback.</li>
+      <li><code>com.android.vending.BILLING</code>: Supports Google Play purchases and purchase restoration.</li>
+      <li><code>USE_BIOMETRIC</code> and the compatibility permission <code>USE_FINGERPRINT</code>: Support Android biometric authentication for App Lock without giving Rentala access to biometric templates.</li>
+      <li><code>WAKE_LOCK</code> and <code>FOREGROUND_SERVICE</code>: Declared by Android background-work libraries to support scheduled work on the device.</li>
     </ul>
     <p>
       Rentala does not request camera or broad media/filesystem storage permissions. File export/import, PDF printing, and sharing are initiated through Android's system picker, print framework, or share interface.
@@ -164,10 +184,11 @@
 
     <h2>6. Data Retention and Your Choices</h2>
     <ul>
-      <li><strong>On-device records:</strong> Records remain in Rentala until you edit or delete them, clear the App's storage, or uninstall the App. Clearing storage or uninstalling removes the app-private copy, but does not delete files you exported, shared with another app, or uploaded to Drive.</li>
+      <li><strong>On-device records:</strong> Records remain in Rentala until changed or removed using available controls, replaced by a backup restore, or removed by clearing the App's storage or uninstalling. Some controls archive records or anonymize tenant details while retaining financial history. Clearing storage or uninstalling removes the app-private rental records, but does not delete files you exported, shared with another app, or uploaded to Drive.</li>
+      <li><strong>Trial records:</strong> Trial status may be recovered from Android Auto Backup, Google Block Store, or a signed stamp in an imported backup after local storage is cleared or the App is reinstalled. Uninstalling does not necessarily reset a trial or remove copies held by Google. Manage Google backup data through the available Android and Google account controls, and delete exported backup files separately. Google retains service data under its own policies.</li>
       <li><strong>Drive backups:</strong> Backups remain in your Google Drive until you delete them from the <code>Rentala Backups</code> folder. Revoking authorization stops future access but does not delete existing backup files.</li>
       <li><strong>Exported and shared files:</strong> Copies saved through the file picker, print destination, or another app are controlled by that destination. Delete them there when no longer needed.</li>
-      <li><strong>Purchase records:</strong> Google Play retains transaction records under its own policies. The App keeps local signed purchase evidence as needed to restore your entitlement.</li>
+      <li><strong>Purchase records:</strong> Google Play retains transaction records under its own policies. The App keeps local signed purchase evidence to verify access, including offline. Clearing storage or uninstalling removes that local evidence; restoring the purchase requires Google Play. A successful ownership check that reports the purchase is no longer owned removes the cached evidence.</li>
     </ul>
 
     <h2>7. Privacy Rights and Requests</h2>
